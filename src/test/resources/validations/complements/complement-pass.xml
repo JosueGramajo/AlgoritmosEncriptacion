@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GTDocumento version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FESP" Exp="" FechaHoraEmision="2019-04-22 07:10:53" CodigoMoneda="GTQ" NumeroAcceso="745" />
+                <Emisor NITEmisor="str1234" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="str1234" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="str1234">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>2</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>10000</PrecioUnitario>
+                        <Precio>20000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>17848.21</MontoGravable>
+                                <MontoImpuesto>2141.79</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>1990</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="2" BienOServicio="B">
+                        <Cantidad>2</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>10000</PrecioUnitario>
+                        <Precio>20000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>17848.21</MontoGravable>
+                                <MontoImpuesto>2141.79</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>1990</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="4283.58"/>
+                    </TotalImpuestos>
+                    <GranTotal>2533.93</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="FESP" NombreComplemento="???" URIComplemento="???">
+                        <RetencionesFacturaEspecial Version="1">
+                            <RetencionISR>1898.75</RetencionISR>
+                            <RetencionIVA>4283.58</RetencionIVA>
+                            <TotalMenosRetenciones>33797.67</TotalMenosRetenciones><!--35696.42-->
+                        </RetencionesFacturaEspecial>
+                    </Complemento>
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>str1234</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="str1234" Numero="745">???</NumeroAutorizacion>
+                <FechaHoraCertificacion>2012-12-13T12:12:12</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+        <Adenda />
+    </SAT>
+    <signature1 />
+    <signature2 />
+</GTDocumento>

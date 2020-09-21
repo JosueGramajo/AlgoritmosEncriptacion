@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This document shall not pass validations for the following reasons:
+    - In the first item, the IVA amount was added to the total
+    - The grand total is incorrectly calculated
+-->
+<GTDocumento version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FACT" Exp="" FechaHoraEmision="2019-04-22 07:10:53" CodigoMoneda="GTQ" NumeroAcceso="745" />
+                <Emisor NITEmisor="str1234" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="str1234" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="str1234">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>200</PrecioUnitario>
+                        <Precio>1000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>106.07</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>PETROLEO</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <CantidadUnidadesGravables>3</CantidadUnidadesGravables>
+                                <MontoImpuesto>14.1</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TURISMO HOSPEDAJE</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>88.39</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TURISMO PASAJES</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <CantidadUnidadesGravables>2</CantidadUnidadesGravables>
+                                <MontoImpuesto>457.69</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TIMBRE DE PRENSA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>441.97</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>BOMBEROS</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>17.68</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TASA MUNICIPAL</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoImpuesto>10</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>2125.9</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="2" BienOServicio="B">
+                        <Cantidad>2</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item2</Descripcion>
+                        <PrecioUnitario>250</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento>0</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>446.43</MontoGravable>
+                                <MontoImpuesto>53.57</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>PETROLEO</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <CantidadUnidadesGravables>3</CantidadUnidadesGravables>
+                                <MontoImpuesto>14.1</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>514.1</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="159.64"/>
+                        <TotalImpuesto NombreCorto="PETROLEO" TotalMontoImpuesto="28.2"/>
+                        <TotalImpuesto NombreCorto="TURISMO HOSPEDAJE" TotalMontoImpuesto="88.39"/>
+                        <TotalImpuesto NombreCorto="TURISMO PASAJES" TotalMontoImpuesto="457.69"/>
+                        <TotalImpuesto NombreCorto="TIMBRE DE PRENSA" TotalMontoImpuesto="441.97"/>
+                        <TotalImpuesto NombreCorto="BOMBEROS" TotalMontoImpuesto="17.68"/>
+                        <TotalImpuesto NombreCorto="TASA MUNICIPAL" TotalMontoImpuesto="10"/>
+                    </TotalImpuestos>
+                    <GranTotal>2533.93</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="NOTAS" NombreComplemento="???" URIComplemento="???" />
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>str1234</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="str1234" Numero="745">???</NumeroAutorizacion>
+                <FechaHoraCertificacion>2012-12-13T12:12:12</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+        <Adenda />
+    </SAT>
+    <signature1 />
+    <signature2 />
+</GTDocumento>

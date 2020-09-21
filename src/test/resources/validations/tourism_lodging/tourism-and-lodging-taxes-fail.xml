@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This document shall not pass validations for the following reasons
+    - In the first item tourism and lodging tax, the element "CodigoUnidadGravable" contains a value which doesn't exist in the catalog
+    - In the second item tourism and lodging tax, the element "MontoGravable" is incorrectly calculated
+    - In the second item tourism and lodging tax, the element "CantidadUnidadesGravables" should not exist
+    - In the second item tourism and lodging tax, the element "MontoImpuesto" is incorrectly calculated
+    - The total tax amount for tourism and lodging is incorrectly calculated
+-->
+<GTDocumento version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FACT" Exp="" FechaHoraEmision="2012-12-13T12:12:12" CodigoMoneda="GTQ" NumeroAcceso="745" />
+                <Emisor NITEmisor="str1234" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="str1234" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="str1234">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>100</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento>100</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>445.09</MontoGravable>
+                                <MontoImpuesto>53.41</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TURISMO HOSPEDAJE</NombreCorto>
+                                <MontoGravable>357.14</MontoGravable>
+                                <CodigoUnidadGravable>6</CodigoUnidadGravable>
+                                <MontoImpuesto>35.71</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="2" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item2</Descripcion>
+                        <PrecioUnitario>100</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento>100</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>445.09</MontoGravable>
+                                <MontoImpuesto>53.41</MontoImpuesto>
+                            </Impuesto>
+                            <Impuesto>
+                                <NombreCorto>TURISMO HOSPEDAJE</NombreCorto>
+                                <MontoGravable>200</MontoGravable>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoImpuesto>80</MontoImpuesto>
+                                <CantidadUnidadesGravables>3</CantidadUnidadesGravables>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="106.82" />
+                        <TotalImpuesto NombreCorto="TURISMO HOSPEDAJE" TotalMontoImpuesto="2" />
+                    </TotalImpuestos>
+                    <GranTotal>123.45</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="NOTAS" NombreComplemento="???" URIComplemento="???" />
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>str1234</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="str1234" Numero="745">???</NumeroAutorizacion>
+                <FechaHoraCertificacion>2012-12-13T12:12:12</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+        <Adenda />
+    </SAT>
+    <signature1 />
+    <signature2 />
+</GTDocumento>

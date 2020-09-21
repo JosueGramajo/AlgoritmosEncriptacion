@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GTDocumento Version="0.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sat.gob.gt/dte/fel/0.1.0" xsi:schemaLocation="http://www.sat.gob.gt/dte/fel/0.1.0">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FACT" FechaHoraEmision="2019-05-14T12:13:40.899" CodigoMoneda="GTQ" NumeroAcceso="100000000" />
+                <Emisor NITEmisor="87223456" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="test@test.com" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="test@test.com">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>200</PrecioUnitario>
+                        <Precio>1000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>106.07</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>2019.83</Total>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="159.64"/>
+                    </TotalImpuestos>
+                    <GranTotal>2533.93</GranTotal>
+                </Totales>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>87664533</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="dbb51ae2" Numero="100000000">A9088BC2-123A-123A-123A-123456789ABC</NumeroAutorizacion>
+                <FechaHoraCertificacion>2019-05-14T12:13:40.899</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+    </SAT>
+</GTDocumento>

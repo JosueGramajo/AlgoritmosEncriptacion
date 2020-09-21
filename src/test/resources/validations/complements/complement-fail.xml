@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This document shall not pass validations for the following reasons:
+    - It contains 2 forbidden complements (FCAM, NOTAS)
+    - Lacks a required complement (FESP)
+    - Includes the complement "EXP" and the attribute "Exp" is empty
+-->
+<GTDocumento version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FESP" Exp="" FechaHoraEmision="2019-04-22 07:10:53" CodigoMoneda="GTQ" NumeroAcceso="745" />
+                <Emisor NITEmisor="str1234" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="str1234" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="str1234">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>200</PrecioUnitario>
+                        <Precio>1000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>106.07</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>2019.83</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="159.64"/>
+                    </TotalImpuestos>
+                    <GranTotal>2533.93</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="FCAM" NombreComplemento="???" URIComplemento="???">
+                        <AbonosFacturaCambiaria Version="1">
+                            <Abono>
+                                <NumeroAbono>1</NumeroAbono>
+                                <FechaVencimiento>2012-12-13</FechaVencimiento>
+                                <MontoAbono>3.14159</MontoAbono>
+                            </Abono>
+                            <Abono>
+                                <NumeroAbono>2</NumeroAbono>
+                                <FechaVencimiento>2012-12-13</FechaVencimiento>
+                                <MontoAbono>3.14159</MontoAbono>
+                            </Abono>
+                            <Abono>
+                                <NumeroAbono>3</NumeroAbono>
+                                <FechaVencimiento>2012-12-13</FechaVencimiento>
+                                <MontoAbono>3.14159</MontoAbono>
+                            </Abono>
+                            <Abono>
+                                <NumeroAbono>4</NumeroAbono>
+                                <FechaVencimiento>2012-12-13</FechaVencimiento>
+                                <MontoAbono>3.14159</MontoAbono>
+                            </Abono>
+                        </AbonosFacturaCambiaria>
+                    </Complemento>
+                    <Complemento IDComplemento="NOTAS" NombreComplemento="???" URIComplemento="???">
+                        <ReferenciasNota Version="123.45" RegimenAntiguo="Antiguo" NumeroAutorizacionDocumentoOrigen="1" FechaEmisionDocumentoOrigen="2012-12-13" MotivoAjuste="str1234" SerieDocumentoOrigen="str1234" NumeroDocumentoOrigen="2"/>
+                    </Complemento>
+                    <Complemento IDComplemento="EXP" NombreComplemento="???" URIComplemento="???">
+                        <Exportacion Version="1">
+                            <NombreConsignatarioODestinatario>str1234</NombreConsignatarioODestinatario>
+                            <DireccionConsignatarioODestinatario>str1234</DireccionConsignatarioODestinatario>
+                            <CodigoConsignatarioODestinatario>str1234</CodigoConsignatarioODestinatario>
+                            <NombreComprador>str1234</NombreComprador>
+                            <DireccionComprador>str1234</DireccionComprador>
+                            <CodigoComprador>str1234</CodigoComprador>
+                            <OtraReferencia>str1234</OtraReferencia>
+                            <INCOTERM>EXW</INCOTERM>
+                            <NombreExportador>str1234</NombreExportador>
+                            <CodigoExportador>str1234</CodigoExportador>
+                        </Exportacion>
+                    </Complemento>
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>str1234</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="str1234" Numero="745">???</NumeroAutorizacion>
+                <FechaHoraCertificacion>2012-12-13T12:12:12</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+        <Adenda />
+    </SAT>
+    <signature1 />
+    <signature2 />
+</GTDocumento>

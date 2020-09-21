@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<GTDocumento Version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales CodigoMoneda="GTQ" FechaHoraEmision="2019-05-14T12:13:40.899" NumeroAcceso="100000000" Tipo="NCRE"/>
+                <Emisor AfiliacionIVA="GEN" CodigoEstablecimiento="745" CorreoEmisor="test@test.com" NITEmisor="87223456" NombreComercial="str1234" NombreEmisor="str1234">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor CorreoReceptor="test@test.com" IDReceptor="123456789" NombreReceptor="str1234" TipoEspecial="CUI">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase CodigoEscenario="3" TipoFrase="1"/>
+                </Frases>
+                <Items>
+                    <Item BienOServicio="B" NumeroLinea="1">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>nuevoItem</Descripcion>
+                        <PrecioUnitario>200</PrecioUnitario>
+                        <Precio>1000</Precio>
+                        <Descuento>10</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>883.93</MontoGravable>
+                                <MontoImpuesto>106.07</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>2019.83</Total>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="159.64"/>
+                    </TotalImpuestos>
+                    <GranTotal>2533.93</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="NOTAS" NombreComplemento="???" URIComplemento="???">
+                        <ReferenciasNota
+                                Version="1"
+                                RegimenAntiguo="Antiguo"
+                                NumeroAutorizacionDocumentoOrigen="EDF99DB9-B6EB-4D05-8557-BCC482B55ECC"
+                                FechaEmisionDocumentoOrigen="2019-05-27T11:58:25.913"
+                                MotivoAjuste="Falto agregar productos al detalle de la factura"
+                                SerieDocumentoOrigen="EDF99DB9"
+                                NumeroDocumentoOrigen="3068873989" />
+                    </Complemento>
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>87664533</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Numero="100000000" Serie="dbb51ae2">A9088BC2-123A-123A-123A-123456789ABC</NumeroAutorizacion>
+                <FechaHoraCertificacion>2019-05-14T12:13:40.899</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+    </SAT>
+</GTDocumento>

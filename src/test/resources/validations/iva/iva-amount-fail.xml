@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This item shall not pass validations for the following reasons:
+   - In the first item, the element "CodigoUnidadGravable" value is 1 and "MontoGravable" it's incorrectly calculated
+   - In the second item, the element "CodigoUnidadGravable" value is 2 and "MontoGravable" it's incorrectly calculated
+   - In the third item, the element "CodigoUnidadGravable" contains a code (3) that doesn't exist in the Taxable units catalog
+   - In the third item, it contains the element "CantidadUnidadesGravables", which should not exist in IVA
+   - In the first item, the element "MontoImpuesto" value it's incorrectly calculated
+   - The total amount of IVA it's incorrectly calculated
+ -->
+<GTDocumento version="0.4">
+    <SAT ClaseDocumento="dte">
+        <DTE ID="DatosCertificados">
+            <DatosEmision ID="DatosEmision">
+                <DatosGenerales Tipo="FACT" Exp="" FechaHoraEmision="2012-12-13T12:12:12" CodigoMoneda="GTQ" NumeroAcceso="745" />
+                <Emisor NITEmisor="str1234" NombreEmisor="str1234" CodigoEstablecimiento="745" NombreComercial="str1234" CorreoEmisor="str1234" AfiliacionIVA="GEN">
+                    <DireccionEmisor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionEmisor>
+                </Emisor>
+                <Receptor IDReceptor="123456789" TipoEspecial="CUI" NombreReceptor="str1234" CorreoReceptor="str1234">
+                    <DireccionReceptor>
+                        <Direccion>str1234</Direccion>
+                        <CodigoPostal>1234</CodigoPostal>
+                        <Municipio>str1234</Municipio>
+                        <Departamento>str1234</Departamento>
+                        <Pais>GT</Pais>
+                    </DireccionReceptor>
+                </Receptor>
+                <Frases>
+                    <Frase TipoFrase="1" CodigoEscenario="3" />
+                </Frases>
+                <Items>
+                    <Item NumeroLinea="1" BienOServicio="B">
+                        <Cantidad>6</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item1</Descripcion>
+                        <PrecioUnitario>84</PrecioUnitario>
+                        <Precio>504</Precio>
+                        <Descuento>4</Descuento>
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>1</CodigoUnidadGravable>
+                                <MontoGravable>447</MontoGravable>
+                                <MontoImpuesto>50</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="2" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item2</Descripcion>
+                        <PrecioUnitario>100</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento />
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>2</CodigoUnidadGravable>
+                                <MontoGravable>447</MontoGravable>
+                                <MontoImpuesto>0</MontoImpuesto>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="3" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item3</Descripcion>
+                        <PrecioUnitario>100</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento />
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>3</CodigoUnidadGravable>
+                                <MontoGravable>500</MontoGravable>
+                                <MontoImpuesto>0</MontoImpuesto>
+                                <CantidadUnidadesGravables>3</CantidadUnidadesGravables>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                    <Item NumeroLinea="4" BienOServicio="B">
+                        <Cantidad>5</Cantidad>
+                        <UnidadMedida>str</UnidadMedida>
+                        <Descripcion>item3</Descripcion>
+                        <PrecioUnitario>100</PrecioUnitario>
+                        <Precio>500</Precio>
+                        <Descuento />
+                        <Impuestos>
+                            <Impuesto>
+                                <NombreCorto>IVA</NombreCorto>
+                                <CodigoUnidadGravable>3</CodigoUnidadGravable>
+                                <MontoImpuesto>0</MontoImpuesto>
+                                <CantidadUnidadesGravables>3</CantidadUnidadesGravables>
+                            </Impuesto>
+                        </Impuestos>
+                        <Total>123.45</Total>
+                        <ComplementosItem>
+                            <ComplementoItem IDComplementoItem="???" NombreComplementoItem="???" URIComplementoItem="???" />
+                        </ComplementosItem>
+                    </Item>
+                </Items>
+                <Totales>
+                    <TotalImpuestos>
+                        <TotalImpuesto NombreCorto="IVA" TotalMontoImpuesto="80" />
+                    </TotalImpuestos>
+                    <GranTotal>123.45</GranTotal>
+                </Totales>
+                <Complementos>
+                    <Complemento IDComplemento="NOTAS" NombreComplemento="???" URIComplemento="???" />
+                </Complementos>
+            </DatosEmision>
+            <Certificacion>
+                <NITCertificador>str1234</NITCertificador>
+                <NombreCertificador>str1234</NombreCertificador>
+                <NumeroAutorizacion Serie="str1234" Numero="745">???</NumeroAutorizacion>
+                <FechaHoraCertificacion>2012-12-13T12:12:12</FechaHoraCertificacion>
+            </Certificacion>
+        </DTE>
+        <Adenda />
+    </SAT>
+    <signature1 />
+    <signature2 />
+</GTDocumento>
