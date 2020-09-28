@@ -12,7 +12,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Encriptacion</title>
+    <title>Desencriptacion</title>
 
     <!-- Fontfaces CSS-->
     <link href="assets/css/font-face.css" rel="stylesheet" media="all">
@@ -105,11 +105,11 @@
                 <ul class="navbar-mobile__list list-unstyled">
                     <li>
                         <a href="/encriptacion">
-                            <i class="fas fa-chart-bar"></i>Encriptación</a>
+                            <i class="fas fa-lock"></i>Encriptación</a>
                     </li>
                     <li>
                         <a href="/desencriptacion">
-                            <i class="fas fa-table"></i>Desencriptación</a>
+                            <i class="fas fa-lock-open"></i>Desencriptación</a>
                     </li>
                 </ul>
             </div>
@@ -153,10 +153,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h3 class="title-5 m-b-35">Encriptación</h3>
+                        <h3 class="title-5 m-b-35">Desencriptación</h3>
 
                         <div class="form-group">
-                            <label class="form-label" for="encryption-type-select">Seleccione el tipo de encriptacion</label>
+                            <label class="form-label" for="encryption-type-select">Seleccione el algoritmo de encriptacion</label>
                             <select class="form-control" id="encryption-type-select">
                                 <option value="-1"></option>
                                 <option value="1">Cajas</option>
@@ -164,9 +164,17 @@
                             </select>
                         </div>
 
-                        <div class="form-group" id="text-to-encrypt-div">
-                            <label for="data-to-encrypt-input" class=" form-control-label">Ingrese texto a encriptar</label>
-                            <input type="text" id="data-to-encrypt-input" class="form-control"/>
+                        <div class="row" id="text-to-encrypt-div">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="data-to-encrypt-input" class=" form-control-label">Ingrese texto a desencriptar</label>
+                                    <input type="text" id="data-to-encrypt-input" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="textFile">O seleccione un archivo de texto con el mensaje encriptado</label>
+                                <input type="file" class="form-control" id="textFile" />
+                            </div>
                         </div>
                         <script>
                             $("#text-to-encrypt-div").hide();
@@ -178,6 +186,42 @@
                         </div>
                         <script>
                             $("#box-key").hide();
+                        </script>
+
+                        <div class="form-group" id="matrix-content">
+                            <label>Ingrese la matriz de texto</label>
+                            <br>
+
+                            <input id="mt1" type="text" name="field00" size="3" class="input-border">
+                            <input id="mt2" type="text" name="field01" size="3" class="input-border">
+                            <input id="mt3" type="text" name="field02" size="3" class="input-border">
+                            <input id="mt4" type="text" name="field10" size="3" class="input-border">
+                            <input id="mt5" type="text" name="field11" size="3" class="input-border">
+                            <input id="mt6" type="text" name="field12" size="3" class="input-border">
+                            <input id="mt7" type="text" name="field20" size="3" class="input-border">
+                            <br>
+                            <input id="mt8" type="text" name="field00" size="3" class="input-border">
+                            <input id="mt9" type="text" name="field01" size="3" class="input-border">
+                            <input id="mt10" type="text" name="field02" size="3" class="input-border">
+                            <input id="mt11" type="text" name="field10" size="3" class="input-border">
+                            <input id="mt12" type="text" name="field11" size="3" class="input-border">
+                            <input id="mt13" type="text" name="field12" size="3" class="input-border">
+                            <input id="mt14" type="text" name="field20" size="3" class="input-border">
+                            <br>
+                            <input id="mt15" type="text" name="field00" size="3" class="input-border">
+                            <input id="mt16" type="text" name="field01" size="3" class="input-border">
+                            <input id="mt17" type="text" name="field02" size="3" class="input-border">
+                            <input id="mt18" type="text" name="field10" size="3" class="input-border">
+                            <input id="mt19" type="text" name="field11" size="3" class="input-border">
+                            <input id="mt20" type="text" name="field12" size="3" class="input-border">
+                            <input id="mt21" type="text" name="field20" size="3" class="input-border">
+
+                            <br><br>
+                            <label style="font-size: small;">Importar archivo de texto</label>
+                            <input type="file" id="matrix-text-file"/>
+                        </div>
+                        <script>
+                            $("#matrix-content").hide();
                         </script>
 
                         <div class="form-group" id="matrix-key">
@@ -195,9 +239,6 @@
                             <input id="m7" type="text" name="field20" size="3" class="input-border">
                             <input id="m8" type="text" name="field21" size="3" class="input-border">
                             <input id="m9" type="text" name="field22" size="3" class="input-border">
-
-                            <br><br>
-                            <button id="random-key-button" class="btn btn-secondary btn-sm">Generar clave aleatoria</button>
                         </div>
                         <script>
                             $("#matrix-key").hide();
@@ -206,7 +247,7 @@
                         <hr>
 
                         <div id="button">
-                            <button id="encrypt-button" class="btn btn-primary btn-lg">Encriptar</button>
+                            <button id="encrypt-button" class="btn btn-primary btn-lg">Desencriptar</button>
                         </div>
 
                         <div id="loader" class="col-xs-6">
@@ -228,9 +269,12 @@
                         <h3 class="title-5 m-b-35">Resultado</h3>
 
                         <div class="form-group">
-                            <label class="form-label" for="encryption-type-select">Texto encriptado:</label>
+                            <label class="form-label" for="encryption-type-select">Texto desencriptado:</label>
                             <br>
                             <h4 id="encrypted-result-label"></h4>
+
+                            <label style="font-size: small;">(El algoritmo de cajas no tiene manera de comprobar el espacio entre palabras, por lo cual el resultado aparece sin espacions)</label>
+                            <label style="font-size: small;">(El algoritmo de cajas en desencriptacion acepta cualquier llave de la misma longitud de la original, sin embargo el resultado no tendra sentido)</label>
                         </div>
 
                         <br>
@@ -330,7 +374,7 @@
 <!-- Main JS-->
 <script src="assets/js/main.js"></script>
 
-<script src="assets/js/encryption-utils.js"></script>
+<script src="assets/js/decryption-utils.js"></script>
 
 </body>
 

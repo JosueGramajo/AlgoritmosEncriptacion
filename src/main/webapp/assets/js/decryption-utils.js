@@ -7,13 +7,15 @@ jQuery(document).ready(function ($) {
         if (this.value === "1"){
             //cajas
             $("#box-key").show();
-            $("#matrix-key").hide();
             $("#text-to-encrypt-div").show();
+            $("#matrix-key").hide();
+            $("#matrix-content").hide();
         }else{
             //matrices
             $("#box-key").hide();
+            $("#text-to-encrypt-div").hide();
             $("#matrix-key").show();
-            $("#text-to-encrypt-div").show();
+            $("#matrix-content").show();
         }
     });
 
@@ -77,10 +79,27 @@ jQuery(document).ready(function ($) {
         node.val(node.val().replace(/[^0-9-]/g,'') ); }
     );
 
+    $("#matrix-text-file").change(function (){
+        var fileName = $(this).val();
+        $(".filename").html(fileName);
+
+        var file = $(this).files[0];
+        var fr = new FileReader();
+        fr.onload = receivedText;
+        let text = fr.readAsText(file);
+
+        console.log(text);
+    });
+
+    function receivedText() {
+        document.getElementById('editor').appendChild(document.createTextNode(fr.result));
+    }
+
     $("#encrypt-button").click(function () {
         let typeSelect = $("#encryption-type-select").val();
-        let dataToEncrypt = $("#data-to-encrypt-input").val();
+        let dataToDecrypt = $("#data-to-encrypt-input").val();
         let key = $("#box-key-input").val();
+        let textFileName = $("#textFile").val().trim();
 
         let m1 = $("#m1").val().trim();
         let m2 = $("#m2").val().trim();
@@ -97,8 +116,18 @@ jQuery(document).ready(function ($) {
             return;
         }
 
-        if (dataToEncrypt === ""){
-            alert("Debe ingresar texto a encriptar");
+        if (dataToDecrypt === "" && textFileName === ""){
+            alert("Debe ingresar texto a encriptar o seleccionar un archivo de texto");
+            return;
+        }
+
+        if (dataToDecrypt !== "" && textFileName !== ""){
+            alert("No puede ingresar el texto y el archivo juntos, debe ser uno a la vez.");
+            return;
+        }
+
+        if ((textFileName.split('.').pop().toLowerCase() !== "txt") && dataToDecrypt === "") {
+            alert("El archivo seleccionado debe ser .txt");
             return;
         }
 
@@ -115,28 +144,40 @@ jQuery(document).ready(function ($) {
         $("#button").hide();
         $("#loader").show();
 
+
+        let formData = new FormData();
+
+        if (textFileName !== ""){
+            jQuery.each(jQuery('#textFile')[0].files, function(i, file) {
+                formData.append('file', file);
+            });
+        }
+
+        formData.append("type", typeSelect);
+        formData.append("message", dataToDecrypt);
+        formData.append("box-key", key);
+        formData.append("m1", m1);
+        formData.append("m2", m2);
+        formData.append("m3", m3);
+        formData.append("m4", m4);
+        formData.append("m5", m5);
+        formData.append("m6", m6);
+        formData.append("m7", m7);
+        formData.append("m8", m8);
+        formData.append("m9", m9);
+
         $.ajax({
             method: "POST",
-            url: "/encrypt-data",
-            data: {
-                "type" : typeSelect,
-                "message" : dataToEncrypt,
-                "box-key" : key,
-                "m1" : m1,
-                "m2" : m2,
-                "m3" : m3,
-                "m4" : m4,
-                "m5" : m5,
-                "m6" : m6,
-                "m7" : m7,
-                "m8" : m8,
-                "m9" : m9
-            },
+            cache: false,
+            contentType: false,
+            processData: false,
+            url: "/decrypt-data",
+            data: formData,
             success: function ( data ) {
                 $("#loader").hide();
                 $("#button").show();
 
-                alert("Encriptacion exitosa, desplazarse hacia abajo para ver el resultado");
+                alert("Desencriptacion exitosa, desplazarse hacia abajo para ver el resultado");
 
                 let obj = JSON.parse(data);
 
@@ -148,7 +189,7 @@ jQuery(document).ready(function ($) {
                     var numberHeader = '<tr>';
                     $.each( obj.list, function( index, value ){
                         wordHeader = wordHeader + '<th scope="col">' + value.letter +'</th>';
-                        numberHeader = numberHeader + '<th scope="col">'+ value.number +'</th>';
+                        numberHeader = numberHeader + '<th scope="col">'+ value.value +'</th>';
                     });
 
                     $('#result-table >thead').append(wordHeader);
@@ -165,9 +206,9 @@ jQuery(document).ready(function ($) {
                         $('#result-table > tbody:last-child').append(body);
                     });
 
-                    $("#encrypted-result-label").html(obj.encrypted);
+                    $("#encrypted-result-label").html(obj.decrypted);
 
-                    encryptedMessage = obj.encrypted;
+                    encryptedMessage = obj.decrypted;
 
                     $("#result-div").show();
                     $("#matrix-result-div").hide();
@@ -206,7 +247,7 @@ jQuery(document).ready(function ($) {
                         for (var i = 0; i < value.length; i++) {
                             resultMatrixBody = resultMatrixBody + '<td>'+value[i]+'</td>';
 
-                            encryptedMessage = encryptedMessage + value[i] + "/";
+                            encryptedMessage = encryptedMessage + value[i] + " , ";
                         }
                         resultMatrixBody = resultMatrixBody + '</tr>';
 
@@ -222,6 +263,10 @@ jQuery(document).ready(function ($) {
             error: function (xhr) {
                 $("#loader").hide();
                 $("#button").show();
+                $("#result-div").hide();
+                $("#matrix-result-div").hide();
+
+                alert(xhr.responseText)
             }
         });
     });

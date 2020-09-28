@@ -40,6 +40,15 @@
         <url-pattern>/encriptacion</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DecryptionServlet</servlet-name>
+        <servlet-class>servlets.DecryptionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DecryptionServlet</servlet-name>
+        <url-pattern>/desencriptacion</url-pattern>
+    </servlet-mapping>
+
     <!-- Operations -->
     <servlet>
         <servlet-name>EncryptDataServlet</servlet-name>
@@ -48,6 +57,20 @@
     <servlet-mapping>
         <servlet-name>EncryptDataServlet</servlet-name>
         <url-pattern>/encrypt-data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DecryptDataServlet</servlet-name>
+        <servlet-class>servlets.DecryptDataServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>20000000</max-file-size>
+            <max-request-size>20000000</max-request-size>
+            <file-size-threshold>10000000</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DecryptDataServlet</servlet-name>
+        <url-pattern>/decrypt-data</url-pattern>
     </servlet-mapping>
 
     <servlet>

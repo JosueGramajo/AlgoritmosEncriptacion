@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper
 import encryption.BoxEncryption
 import encryption.MatrixEncryption
 import org.joda.time.DateTime
@@ -6,5 +7,7 @@ import java.io.FileOutputStream
 import java.util.*
 
 fun main(args: Array<String>) {
-    MatrixEncryption.encrypt("hoy es el primer dia", arrayListOf(-1, 1, 1, -2, -3, 1, 3, 1, -2))
+    val result = BoxEncryption.decrypt("ELDAA AILT SDAE TOACR HVOR","PATIO")
+
+    println(ObjectMapper().writeValueAsString(result))
 }
